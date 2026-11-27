@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The $5M Fund · Presenter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="banner"></div>
+<div class="stage">
+  <div class="top">
+    <div>
+      <div class="phase" id="phase"></div>
+      <h1 class="big" id="title">The $5M Fund</h1>
+    </div>
+    <div style="display:flex;gap:1vw;align-items:center">
+      <span class="counter" id="counter"></span>
+      <span class="timer" id="timer" hidden></span>
+    </div>
+  </div>
+  <div id="view" style="flex:1"></div>
+  <div class="controls">
+    <button id="back">◀ Back</button>
+    <button id="next" class="primary">Next ▶</button>
+    <span class="spacer"></span>
+    <button id="bots" hidden>+ 10 test players</button>
+    <a id="openPlayer" class="muted" target="_blank" hidden>Open a player tab</a>
+    <button id="reset">Reset game</button>
+  </div>
+</div>
+<script src="qrcode.js"></script>
+<script src="config.js"></script>
+<script src="game.js"></script>
+<script src="store.js"></script>
+<script src="presenter.js"></script>
+</body>
+</html>
