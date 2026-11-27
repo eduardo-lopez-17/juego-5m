@@ -15,6 +15,7 @@
   if (store.demo) $('banner').innerHTML = '<div class="banner">DEMO MODE · test player</div>';
 
   const me = () => (data.players || {})[myId] || {};
+  render(); // show the join form right away, before Firebase answers
 
   function render() {
     const st = data.state || { phase: 'lobby' }, ph = st.phase || 'lobby', p = me();

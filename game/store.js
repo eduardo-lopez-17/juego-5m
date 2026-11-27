@@ -30,7 +30,8 @@ window.createStore = function (room, onChange) {
     .then(() => {
       firebase.initializeApp(cfg);
       ref = firebase.database().ref('games/' + room);
-      ref.on('value', (snap) => { const v = snap.val() || {}; onChange({ state: v.state || { phase: 'lobby' }, players: v.players || {} }); });
+      ref.on('value', (snap) => { const v = snap.val() || {}; onChange({ state: v.state || { phase: 'lobby' }, players: v.players || {} }); },
+        (err) => alert('Firebase rejected the connection: ' + (err && err.message) + '. Check the Realtime Database rules.'));
       queue.splice(0).forEach((f) => f());
     })
     .catch(() => alert('Could not connect to Firebase. Check config.js and your internet connection.'));
