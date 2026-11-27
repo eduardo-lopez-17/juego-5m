@@ -30,7 +30,7 @@
       v.innerHTML = `<h1>The $5M Fund</h1><p class="muted">You are a venture capitalist. Pick a nickname to join.</p>
         <input type="text" id="nm" maxlength="18" placeholder="Your nickname" autocomplete="off"><button class="primary" id="join">Join</button>`;
       const join = () => { const n = $('nm').value.trim(); if (n) store.setPlayer(myId, { name: n, joined: Date.now() }); };
-      $('join').onclick = join; $('nm').onkeydown = (e) => e.key === 'Enter' && join();
+      $('join').onclick = join; $('nm').onkeydown = (e) => { if (e.key === 'Enter') join(); };
       return;
     }
 
